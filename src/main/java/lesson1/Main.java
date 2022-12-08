@@ -8,15 +8,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Решение 1-й задачи:");
-
-        boolean getSum = task1(13, 6);
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("Введите первое число: ");
+        int number1 = scanner.nextInt();
+        System.out.printf("Введите второе число: ");
+        int number2 = scanner.nextInt();
+        //scanner.close();
+        boolean getSum=task1(number1,number2);
         System.out.println(getSum);
         System.out.println("Решение 2-й задачи:");
-        task2(-12);
+        System.out.printf("Введите целое число: ");
+
+        task2(inputNum());
         System.out.println("Решение 3-й задачи:");
 
-        boolean v=task3(-10);
-        System.out.println(v);
+        boolean v=task3(inputNum());
+        System.out.println(v);/*
         System.out.println("Решение 4-й задачи:");
         task4("Все будет хорошо!",7);
         System.out.println("Решение 5-й задачи:");
@@ -35,16 +42,19 @@ public class Main {
         int[] arrayValue = task10(10,8);
         System.out.println(Arrays.toString(arrayValue));
         System.out.println("Решение 11-й задачи:");
-        task11();
+        task11();*/
     }
 
 
-    private static boolean task1(int num1, int num2) {
+    private static boolean task1(int num1,int num2) {
     /*Написать метод, принимающий на вход два целых числа и проверяющий,
      что их сумма лежит в пределах от 10 до 20 (включительно), если да –
       вернуть true, в противном случае – false.*/
+
+
         return (num1 + num2 >= 10 && num1 + num2 <= 20);
     }
+
 
     private static void task2(int number) {
     /*Написать метод, которому в качестве параметра передается целое число,
@@ -54,7 +64,12 @@ public class Main {
         else System.out.println("Число " + number + " отрицательное");
 
     }
-
+    private static int inputNum() {
+        Scanner scanner1 = new Scanner(System.in);
+        int numberInt = scanner1.nextInt();
+        //scanner1.close();
+        return numberInt;
+    }
     private static boolean task3(int number) {
     /*Написать метод, которому в качестве параметра передается целое число. Метод должен
     вернуть true, если число отрицательное, и вернуть false если положительное.*/
@@ -76,6 +91,7 @@ public class Main {
     /*Написать метод, который определяет, является ли год високосным, и возвращает
      (високосный - true, не високосный - false). Каждый 4-й год является високосным,
       кроме каждого 100-го, при этом каждый 400-й – високосный. */
+
         return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
     }
 
