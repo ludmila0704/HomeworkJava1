@@ -21,13 +21,15 @@ public class Main {
 
         task2(inputNum());
         System.out.println("Решение 3-й задачи:");
-
+        System.out.printf("Введите целое число: ");
         boolean v=task3(inputNum());
-        System.out.println(v);/*
+        System.out.println(v);
         System.out.println("Решение 4-й задачи:");
-        task4("Все будет хорошо!",7);
+        System.out.println("Введите строку и количество повторений этой строки:");
+        task4(inputTask4(),inputNum());
         System.out.println("Решение 5-й задачи:");
-        boolean year=task5(2100);
+        System.out.println("Введите год. Узнаем високосный ли он:");
+        boolean year=task5(inputNum());
         System.out.println(year);
         System.out.println("Решение 6-й задачи:");
         task6();
@@ -42,7 +44,7 @@ public class Main {
         int[] arrayValue = task10(10,8);
         System.out.println(Arrays.toString(arrayValue));
         System.out.println("Решение 11-й задачи:");
-        task11();*/
+        task11();
     }
 
 
@@ -85,6 +87,14 @@ public class Main {
                 number--;
             }
         } else System.out.println("Введенное число или 0 или отрицательное! Попробуйте заново!");
+    }
+
+    private static String inputTask4() {
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.printf("Введите строку :  ");
+        String inputString = scanner1.nextLine();
+
+        return inputString;
     }
 
     private static boolean task5(int year) {
